@@ -2,9 +2,9 @@ import React from "react";
 import "./App.css";
 import ReactLogo from "./assets/react-logo.png";
 
-const App = () => {
+function ReactFacts() {
   return (
-    <div>
+    <>
       <img src={ReactLogo} alt="react-logo" width={40} />
       <h1>Fun facts about React</h1>
       <ul>
@@ -14,8 +14,12 @@ const App = () => {
         <li>Is maintained by Meta</li>
         <li>Powers thousands of enterprise apps, including mobile apps</li>
       </ul>
-    </div>
+    </>
   );
+}
+
+const App = () => {
+  return <ReactFacts />;
 };
 
 export default App;

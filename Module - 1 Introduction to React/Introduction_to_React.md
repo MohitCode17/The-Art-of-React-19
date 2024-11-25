@@ -128,3 +128,61 @@ Hints:
   just like in HTML. In the preview.png image, I have it set to 40px.
 
 ```
+
+## Components
+
+Component is reusable piece of code that used to define certain part of UI.
+
+```javascript
+// Rendering Components
+function App() {
+  return <ReactFacts />;
+}
+
+// Components
+function ReactFacts() {
+  return (
+    <div>
+      <img src="react-logo.png" alt="react-logo" width={40} />
+      <h1>Fun facts about React</h1>
+      <ul>
+        <li>Was first released in 2013</li>
+        <li>Was originally created by Jordan Walke</li>
+        <li>Has well over 200K stars on GitHub</li>
+        <li>Is maintained by Meta</li>
+        <li>Powers thousands of enterprise apps, including mobile apps</li>
+      </ul>
+    </div>
+  );
+}
+```
+
+React components are regular JavaScript functions, but their names must start with a "capital letter" or they won't work!
+
+## Fragments
+
+A Fragment in React is a lightweight wrapper component provided by the React library that lets you group multiple elements without adding an extra node to the DOM.
+
+```javascript
+// Rendering Components
+function App() {
+  return <ReactFacts />;
+}
+
+// Components
+function ReactFacts() {
+  return (
+    <>
+      <img src="react-logo.png" alt="react-logo" width={40} />
+      <h1>Fun facts about React</h1>
+      <ul>
+        <li>Was first released in 2013</li>
+        <li>Was originally created by Jordan Walke</li>
+        <li>Has well over 200K stars on GitHub</li>
+        <li>Is maintained by Meta</li>
+        <li>Powers thousands of enterprise apps, including mobile apps</li>
+      </ul>
+    </>
+  );
+}
+```
