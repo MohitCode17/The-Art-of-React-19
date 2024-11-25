@@ -1,0 +1,38 @@
+<!-- 
+ * Challenge: Set up a React app from scratch again.
+ * This time, try rendering an unordered list with 2-3 list items inside
+ * with why you're excited to be learning React.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>First React Challenge 💪</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(
+        <ul>
+          <li>Industry Demand</li>
+          <li>Component-Based Architecture</li>
+          <li>Backed by a Strong Ecosystem</li>
+          <li>Career Oportunity</li>
+        </ul>
+      );
+    </script>
+  </body>
+</html>
