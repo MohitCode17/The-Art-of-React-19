@@ -209,3 +209,5 @@ Challenge: Project setup
   You may need to do some extra research to figure out how this
   works if you haven't done it before.
 ```
+
+End of ReactFacts Static Website 😃🏆
