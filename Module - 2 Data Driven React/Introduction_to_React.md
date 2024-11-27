@@ -39,3 +39,31 @@ function addTwoNumber(a, b) {
   return a + b;
 }
 ```
+
+## Adding JavaScript Expression
+
+An expression is any valid unit of code that resolves to a value. Expressions can be simple, such as a single variable, or complex, involving operators, function calls, and other expressions.
+
+In React, you can inject expressions directly into JSX code by enclosing them in curly braces {}. This allows you to dynamically render values, variables, or the results of expressions within your components.
+
+{ } is also called evaluated expression, because we don't write whole javascript, we can only inject the final outcome which evaluate.
+
+Here's an example:-
+
+```javascript
+const DemoFunc = () => {
+  const name = "Mohit";
+  const isAdmin = true;
+
+  const checkAdmin = () => {
+    return isAdmin === true ? "You're admin." : `You're guest user.`;
+  };
+
+  return (
+    <div>
+      <h1>{name}</h1>
+      <h3>{checkAdmin()}</h3>
+    </div>
+  );
+};
+```
