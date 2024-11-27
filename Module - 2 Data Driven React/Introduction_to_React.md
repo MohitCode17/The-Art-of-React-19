@@ -197,3 +197,31 @@ const App = () => {
 
 export default App;
 ```
+
+### Receiving props in a component
+
+So how do we receive these props on the contact side so we can finally get rid of all of the hard coded data that we have in Contact component.
+
+Well, just like a function that receives a parameter, my react component will receive something in the function's parameter, which will be an object that represents all of the properties that we passed in, which we called `props`.
+
+```javascript
+const Contact = (props) => {
+  // console.log(props); // getting object that we passed in.
+  return (
+    <article className="contact-card">
+      <img src={props.img} alt={props.name} />
+      <h3>{props.name}</h3>
+      <div className="info-group">
+        <img src={phone} alt="phone icon" />
+        <p>{props.phone}</p>
+      </div>
+      <div className="info-group">
+        <img src={mail} alt="mail icon" />
+        <p>{props.email}</p>
+      </div>
+    </article>
+  );
+};
+
+export default Contact;
+```

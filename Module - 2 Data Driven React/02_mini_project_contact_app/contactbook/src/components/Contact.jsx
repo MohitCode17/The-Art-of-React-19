@@ -1,20 +1,20 @@
 import React from "react";
-import whiskerson from "../assets/mr-whiskerson.png";
 import phone from "../assets/phone-icon.png";
 import mail from "../assets/mail-icon.png";
 
-const Contact = () => {
+const Contact = (props) => {
+  // console.log(props); // getting object that we passed in.
   return (
     <article className="contact-card">
-      <img src={whiskerson} alt="Photo of Mr. Whiskerson" />
-      <h3>Mr. Whiskerson</h3>
+      <img src={props.img} alt={props.name} />
+      <h3>{props.name}</h3>
       <div className="info-group">
         <img src={phone} alt="phone icon" />
-        <p>(212) 555-1234</p>
+        <p>{props.phone}</p>
       </div>
       <div className="info-group">
         <img src={mail} alt="mail icon" />
-        <p>mr.whiskaz@catnap.meow</p>
+        <p>{props.email}</p>
       </div>
     </article>
   );
