@@ -67,3 +67,88 @@ const DemoFunc = () => {
   );
 };
 ```
+
+## Mini Project - Contact Book
+
+Let's created this Contact book project to understand, how does `props` work?
+
+```
+
+Challenge:
+ - Create a Contact component in another file
+ - Move one of the contact card articles below into that file
+ - import and render 4 instances of that contact card
+  - Think ahead: what's the problem with doing it this way?
+ */
+```
+
+```javascript
+import React from "react";
+import "./App.css";
+import whiskerson from "./assets/mr-whiskerson.png";
+import fluffykins from "./assets/fluffykins.png";
+import felix from "./assets/felix.png";
+import pumpkin from "./assets/pumpkin.png";
+import phone from "./assets/phone-icon.png";
+import mail from "./assets/mail-icon.png";
+
+const App = () => {
+  return (
+    <div className="contacts">
+      <article className="contact-card">
+        <img src={whiskerson} alt="Photo of Mr. Whiskerson" />
+        <h3>Mr. Whiskerson</h3>
+        <div className="info-group">
+          <img src={phone} alt="phone icon" />
+          <p>(212) 555-1234</p>
+        </div>
+        <div className="info-group">
+          <img src={mail} alt="mail icon" />
+          <p>mr.whiskaz@catnap.meow</p>
+        </div>
+      </article>
+
+      <article className="contact-card">
+        <img src={fluffykins} alt="Photo of Fluffykins" />
+        <h3>Fluffykins</h3>
+        <div className="info-group">
+          <img src={phone} alt="phone icon" />
+          <p>(212) 555-2345</p>
+        </div>
+        <div className="info-group">
+          <img src={mail} alt="mail icon" />
+          <p>fluff@me.com</p>
+        </div>
+      </article>
+
+      <article className="contact-card">
+        <img src={felix} alt="Photo of Felix" />
+        <h3>Felix</h3>
+        <div className="info-group">
+          <img src={phone} alt="phone icon" />
+          <p>(212) 555-4567</p>
+        </div>
+        <div className="info-group">
+          <img src={mail} alt="mail icon" />
+          <p>thecat@hotmail.com</p>
+        </div>
+      </article>
+
+      <article className="contact-card">
+        <img src={pumpkin} alt="Photo of Pumpkin" />
+        <h3>Pumpkin</h3>
+        <div className="info-group">
+          <img src={phone} alt="phone icon" />
+          <p>(0800) CAT KING</p>
+        </div>
+        <div className="info-group">
+          <img src={mail} alt="mail icon" />
+          <p>pumpkin@scrimba.com</p>
+        </div>
+      </article>
+    </div>
+  );
+};
+
+export default App;
+```
