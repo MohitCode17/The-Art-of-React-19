@@ -1,20 +1,19 @@
 import React from "react";
-import phone from "../assets/phone-icon.png";
+import phoneIcon from "../assets/phone-icon.png";
 import mail from "../assets/mail-icon.png";
 
-const Contact = (props) => {
-  // console.log(props); // getting object that we passed in.
+const Contact = ({ img, name, phone, email }) => {
   return (
     <article className="contact-card">
-      <img src={props.img} alt={props.name} />
-      <h3>{props.name}</h3>
+      <img src={img} alt={name} />
+      <h3>{name}</h3>
       <div className="info-group">
-        <img src={phone} alt="phone icon" />
-        <p>{props.phone}</p>
+        <img src={phoneIcon} alt="phone icon" />
+        <p>{phone}</p>
       </div>
       <div className="info-group">
         <img src={mail} alt="mail icon" />
-        <p>{props.email}</p>
+        <p>{email}</p>
       </div>
     </article>
   );

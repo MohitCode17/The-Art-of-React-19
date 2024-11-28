@@ -225,3 +225,28 @@ const Contact = (props) => {
 
 export default Contact;
 ```
+
+### Props Destructuring in React
+
+props destructuring is a syntax used to extract properties from a props object directly within a component. This simplifies access to the properties and improves code readability, especially when there are multiple props.
+
+```javascript
+const Contact = ({ img, name, phone, email }) => {
+  return (
+    <article className="contact-card">
+      <img src={img} alt={name} />
+      <h3>{name}</h3>
+      <div className="info-group">
+        <img src={phoneIcon} alt="phone icon" />
+        <p>{phone}</p>
+      </div>
+      <div className="info-group">
+        <img src={mail} alt="mail icon" />
+        <p>{email}</p>
+      </div>
+    </article>
+  );
+};
+
+export default Contact;
+```
