@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
 import whiskerson from "./assets/mr-whiskerson.png";
 import fluffykins from "./assets/fluffykins.png";
 import felix from "./assets/felix.png";
 import pumpkin from "./assets/pumpkin.png";
 import Contact from "./components/Contact";
+import "./App.css";
 
 const App = () => {
   return (

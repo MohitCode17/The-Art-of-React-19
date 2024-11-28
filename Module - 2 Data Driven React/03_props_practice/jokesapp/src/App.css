@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10px;
+  font-family: "Inter", sans-serif;
+  background-color: whitesmoke;
+}
+
+.setup {
+  font-weight: bold;
+}

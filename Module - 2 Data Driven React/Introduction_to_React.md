@@ -250,3 +250,15 @@ const Contact = ({ img, name, phone, email }) => {
 
 export default Contact;
 ```
+
+### Props Practice
+
+```
+ * Challenge: create a page that displays your favorite jokes
+ * - Create a Joke component in its own file.
+ * - Import and render 4-5 <Joke /> components
+ * - Each Joke should receive a "setup" prop and a "punchline" prop
+ *   and render those however you'd like
+ * - Use your favorite 2-part jokes (setup & punchline), or check
+ *   jokes.md file for some examples.
+```
