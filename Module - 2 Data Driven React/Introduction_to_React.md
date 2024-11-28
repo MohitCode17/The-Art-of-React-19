@@ -262,3 +262,44 @@ export default Contact;
  * - Use your favorite 2-part jokes (setup & punchline), or check
  *   jokes.md file for some examples.
 ```
+
+#### Conditional Rendering
+
+Conditional rendering in React is a technique used to render components or elements based on certain conditions. This means you can control whether or not certain JSX elements are displayed based on variables, props, or state.
+
+```
+ * Conditional Rendering:
+ * Some jokes are only a punchline with no setup:
+ *
+ * E.g.: "It’s hard to explain puns to kleptomaniacs because
+ * they always take things literally."
+ *
+ * how might you make it only
+ * show the punchline?
+```
+
+```javascript
+import React from "react";
+
+const Jokes = ({ setup, punchline }) => {
+  return (
+    <>
+      {setup && <p className="setup">Setup: {setup}</p>}
+      <p className="punchline">Puncline: {punchline}</p>
+      <hr />
+    </>
+  );
+};
+
+export default Jokes;
+```
+
+```
+Explanation:
+
+{setup && ...}:
+
+- This checks if the setup prop exists.
+- If setup is truthy, it renders the <p> tag for the setup.
+- If setup is falsy (e.g., undefined, null, or an empty string), it skips rendering that line.
+```
