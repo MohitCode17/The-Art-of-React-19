@@ -409,3 +409,5 @@ const App = () => {
  * - display the array of Entry components in place of the current
  *   hard-coded <Entry /> instance.
 ```
+
+🥇 Wrap up our Travel Journal Project, Greak work till here...
