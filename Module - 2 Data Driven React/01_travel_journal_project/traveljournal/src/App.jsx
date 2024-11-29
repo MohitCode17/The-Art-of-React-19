@@ -10,18 +10,7 @@ const App = () => {
       <Header />
       <main className="container">
         {data.map((journal) => (
-          <Entry
-            key={journal.id}
-            img={{
-              src: journal.img.src,
-              alt: journal.img.alt,
-            }}
-            title={journal.title}
-            country={journal.country}
-            googleMapsLink={journal.googleMapsLink}
-            dates={journal.dates}
-            text={journal.text}
-          />
+          <Entry key={journal.id} journal={journal} />
         ))}
       </main>
     </>
