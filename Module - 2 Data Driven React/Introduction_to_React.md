@@ -347,3 +347,54 @@ export default FruitList;
 ```
 
 **Key Prop**: The key prop is used to uniquely identify each element in the list for efficient rendering and updates by React.
+
+## Mapping Components
+
+Let's see how does we map component.
+
+```javascript
+const App = () => {
+  return (
+    <>
+      <Jokes
+        setup="I got my daughter a fridge for her birthday."
+        punchline="I can't wait to see her face light up when she opens it."
+      />
+      <Jokes
+        setup="How did the hacker escape the police?"
+        punchline="He just ransomware!"
+      />
+      <Jokes
+        setup="Why don't pirates travel on mountain roads?"
+        punchline="Scurvy"
+      />
+      <Jokes
+        setup="Why do bees stay in the hive in the winter?"
+        punchline="Swarm"
+      />
+      <Jokes
+        setup="What's the best thing about Switzerland?"
+        punchline="I don't know, but the flag is a big plus!"
+      />
+    </>
+  );
+};
+
+export default App;
+```
+
+Dynamic Rendering using map:
+
+- The App component imports an array of jokes (jokesData) and uses the .map() method to dynamically create a Jokes component for each joke in the array.
+- This method iterates over the jokesData array, and for each joke object, it generates a Jokes component with setup and punchline as props.
+- The dynamically generated components are stored in jokesElements and rendered within the JSX.
+
+```javascript
+const App = () => {
+  const jokesElements = jokesData.map((joke) => {
+    return <Jokes setup={joke.setup} punchline={joke.punchline} />;
+  });
+
+  return <>{jokesElements}</>;
+};
+```
