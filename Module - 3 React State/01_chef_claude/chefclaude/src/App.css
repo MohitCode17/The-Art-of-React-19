@@ -31,3 +31,42 @@ nav > img {
 nav > span {
   font-size: 2rem;
 }
+
+main.container {
+  max-width: 1024px;
+  width: 100%;
+  padding: 40px 20px;
+  margin: 0px auto;
+}
+
+.add_ingredient_form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 38px;
+}
+
+.add_ingredient_form > input {
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  padding: 10px 13px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  flex-grow: 1;
+}
+
+.add_ingredient_form > button {
+  font-family: Inter, sans-serif;
+  border-radius: 6px;
+  border: none;
+  background-color: #141413;
+  color: #fafaf8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.add_ingredient_form > button::before {
+  content: "+";
+  margin-right: 5px;
+}
