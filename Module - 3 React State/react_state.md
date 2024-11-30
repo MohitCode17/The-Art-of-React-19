@@ -163,3 +163,32 @@ const [result, setResult] = usestate("Yes");
 - result: The current state value.
 - setResult: A function to update the state.
 - Yes: The initial value of the state, which can be a number, string, array, object, or any data type.
+
+## Changing the State
+
+```javascript
+import React, { useState } from "react";
+import "./App.css";
+
+const App = () => {
+  let [result, setResult] = useState("Yes");
+
+  // Update the state
+  const handleClick = () => {
+    setResult("Heck Yes");
+  };
+
+  return (
+    <main>
+      <h1 className="title">Is state important to know?</h1>
+      <button className="value" onClick={handleClick}>
+        {result}
+      </button>
+    </main>
+  );
+};
+
+export default App;
+```
+
+setResult function will cause the component to re-render with the updated state value.
