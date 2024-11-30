@@ -74,3 +74,36 @@ In `handleSubmit`, we pushes the newIngredient to the ingredients array, Though 
 The issue arises because we're directly mutating the ingredients array with the push method, but React doesn't detect this change to re-render the component.
 
 React's state and rendering system rely on state changes via the `useState` hook to trigger re-renders. Simply modifying an array like ingredients directly won't notify React to update the UI.
+
+## Props vs State
+
+**Props** refers to the properties being passed into a component in order for it to work correctly, similar to how a function recives parameters: "from above." A component receiving props is not allowed to modify those props. (i.e. they are "immutable.")
+
+```javascript
+function addTwoNumbers(a, b) {
+  // DON'T DO THIS
+  a = 38;
+  return a + b;
+}
+
+console.log(1, 2); // Expected resule is 3, but got 40.
+```
+
+```javascript
+function Navbar(props) {
+  // DON'T DO THIS
+  props.logoIcon = "some-other-icon.png";
+}
+
+<Navbar logoIcon="smily.png" />; // Expected to display smily.png but got some-other-icon.png.
+```
+
+**State** refers to values that are managed by the component, similar to variables declared inside a function. Any time you have changing values that should be saved/displayed, you'll likely be using state.
+
+**View as a function of state**
+
+**Render**: React runs your function and display whatever gets returned. The function will only be run again if it receives new props from above, or its internal state value changes.
+
+**setState**: Changing a local, non-state variable doesn't cause React to re-render the component. Changing state with a built-in `setState` function does.
+
+**view = function(state)**: Thus, when state changes and React re-renders your component, something new gets returned and replaces what used to be on the pages.
