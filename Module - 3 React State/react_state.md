@@ -107,3 +107,47 @@ function Navbar(props) {
 **setState**: Changing a local, non-state variable doesn't cause React to re-render the component. Changing state with a built-in `setState` function does.
 
 **view = function(state)**: Thus, when state changes and React re-renders your component, something new gets returned and replaces what used to be on the pages.
+
+## useState Hook
+
+The useState hook in React is a built-in function that allows you to add state management to functional components. It lets you declare state variables, which are preserved across re-renders, enabling your component to maintain and update its state dynamically.
+
+```javascript
+const App = () => {
+  let state = "Yes";
+
+  const handleClick = () => {
+    state = "Heck Yes";
+    console.log(state);
+  };
+
+  return (
+    <main>
+      <h1 className="title">Is state important to know?</h1>
+      <button onClick={handleClick} className="value">
+        {state}
+      </button>
+    </main>
+  );
+};
+```
+
+Changing a local `state` variable doesn't cause React to re-render the component. Let's resolve this using `useState`.
+
+```javascript
+import React, { useState } from "react";
+
+const App = () => {
+  let result = useState("Yes");
+  console.log(result);
+
+  return (
+    <main>
+      <h1 className="title">Is state important to know?</h1>
+      <button className="value">{result[0]}</button>
+    </main>
+  );
+};
+```
+
+`result` will be an array contain two items: `[Yes, f{}]`. "Yes" is initial value which we have provided it can be any data-type.
