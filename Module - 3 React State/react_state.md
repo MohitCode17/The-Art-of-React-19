@@ -151,3 +151,15 @@ const App = () => {
 ```
 
 `result` will be an array contain two items: `[Yes, f{}]`. "Yes" is initial value which we have provided it can be any data-type.
+
+## useState Array Destructuring
+
+As we have see, result will be an array and we can destructured it.
+
+```javascript
+const [result, setResult] = usestate("Yes");
+```
+
+- result: The current state value.
+- setResult: A function to update the state.
+- Yes: The initial value of the state, which can be a number, string, array, object, or any data type.
