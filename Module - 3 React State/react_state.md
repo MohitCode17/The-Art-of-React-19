@@ -192,3 +192,30 @@ export default App;
 ```
 
 setResult function will cause the component to re-render with the updated state value.
+
+## State Practice
+
+Go to state practice - counter app and try out challenges.
+
+```
+* Challenge - 1:
+* Create state to track our count value (initial value is 0)
+* Don't forget to replace the hard-coded "0" with your new state
+```
+
+```
+* Challenge - 2:
+* Create a function called `add` that runs
+* when the + button is clicked. (Can just console.log("add") for now)
+```
+
+```
+* Challenge - 3:
+* See if you can think of a way to add 1 to the count
+* every time the + button is clicked
+```
+
+```
+* Challenge:
+* Add functionality to the minus button
+```
