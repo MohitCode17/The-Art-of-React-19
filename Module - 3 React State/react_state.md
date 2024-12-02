@@ -219,3 +219,77 @@ Go to state practice - counter app and try out challenges.
 * Challenge:
 * Add functionality to the minus button
 ```
+
+## Update State with Callback Function
+
+There is another way to update the state using callback function like below.
+
+```javascript
+const [count, setCount] = useState(0);
+
+const add = () => {
+  setCount((prevCount) => prevCount + 1);
+};
+```
+
+**Benefits of Using `prevState`**
+
+1. Accurate State Updates: Ensures state updates are calculated based on the most current value, not a potentially outdated one.
+
+2. Safe in Concurrent Updates: Handles scenarios where multiple state updates are queued in a single render cycle.
+
+3. Scales Well: Essential in complex scenarios, like:
+   Updating nested state.
+
+**When to Use This Syntax**
+
+- Whenever the new state depends on the previous state.
+
+  - For example:
+    - Incrementing or decrementing counters.
+    - Toggling boolean values (setState(prevState => !prevState)).
+    - Managing arrays or objects based on their previous state.
+
+**Concurrent Updates of State**
+
+Example Without prevState (Potential Bug)
+
+```javascript
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const add = () => {
+    setCount(count + 1); // Uses the "current" value of count
+    setCount(count + 1); // Still uses the same "current" value of count
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={add}>+</button>
+    </div>
+  );
+}
+
+Expected result should be `2` but still get `1`.
+```
+
+Example Using prevState (Correct Behavior)
+
+```javascript
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const add = () => {
+    setCount((prevState) => prevState + 1); // Updates based on the latest state
+    setCount((prevState) => prevState + 1); // Updates again based on the updated state
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={add}>+</button>
+    </div>
+  );
+}
+```
