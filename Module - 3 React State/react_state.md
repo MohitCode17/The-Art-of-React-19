@@ -416,3 +416,36 @@ or maybe I should qualify that. The traditional way of gathering information fro
 was quite a bit more cumbersome that first of all what we doint here, and more importantly what we're about to learn in the next section.
 
 React 19 is introduced must better way to gather form informtion.
+
+**Section - 2 of Transition to React 19**
+
+If you remeber, I was talking about forms back in probably the original spec form for HTML.
+
+There was a property or an attribute that you could add to your form called `action`.
+
+And this is where you would tell where your browser should send the information from the form to. Oftertimes, this would end up being, for example a PHP file.
+
+```javascript
+<form action="phpfile.php">...</form>
+```
+
+React 19 allows us to not only use regular action for a backend file if we need, but we also can pass a function to it.
+
+```javascript
+<form action={signUp}>...</form>
+```
+
+And when you passing a function to your action, it doesn't receive an event because we're not handling an event. But instead, it's just automatically going to receive the form data.
+
+Behind the scenen the action is prevent default the submission of form for us by default.
+
+And it reset the form for us automatically.
+
+```javascript
+function signUp(formData) {
+  const email = formData.get("email");
+  console.log(email);
+}
+
+<form action={signUp}>...</form>;
+```

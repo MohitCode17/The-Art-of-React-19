@@ -2,23 +2,17 @@ import React, { useState } from "react";
 import "./App.css";
 
 const App = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const formEl = e.currentTarget;
-    const formData = new FormData(formEl);
+  const signUp = (formData) => {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    // Gather the info from the form
-    // Submit it to a backend
-    formEl.reset();
+    console.log(email);
   };
 
   return (
     <section>
       <h1>Signup form</h1>
-      <form onSubmit={handleSubmit} method="POST">
+      <form action={signUp}>
         <label htmlFor="email">Email:</label>
         <input
           id="email"
