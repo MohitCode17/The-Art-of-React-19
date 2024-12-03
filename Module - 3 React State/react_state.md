@@ -293,3 +293,73 @@ function Counter() {
   );
 }
 ```
+
+## Form Handling in React
+
+Form handling in React is a key skill for developers working on interactive web applications. Here's a comprehensive guide covering the concepts, tools, and practices for handling forms in React.
+
+React 19 introduces `Actions`, which are asynchronous functions. `Actions` are helpful in making form submissions easier. This guide dives into what `Actions` are and how to use them.
+
+### React `Actions`
+
+To understand Actions, let's first take a look at how we manage forms today. In React 18 and earlier, we submit forms using the handleSubmit function in a button. Here's a simple form example:
+
+```javascript
+// Form submission in React 18
+
+const App = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+      alert("Login Successfully");
+      alert(`Welcome, ${email}`);
+    }, 2000);
+  };
+
+  if (isLoading) return <p>Loading...</p>;
+
+  return (
+    <section>
+      <h1>Signup form</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="john@doe.com"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <br />
+
+        <label htmlFor="password">Password:</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+
+        <button>Submit</button>
+      </form>
+    </section>
+  );
+};
+```
+
+In this code, we are doing the following:
+
+1. Adding a loading state: We use a variable isPending to manually keep track of the loading state.
+
+2. Form submission: The form is submitted using the handleSubmit event handler.
+
+3. Capturing the submitted value: The handleChange function captures the submitted value and stores it in state variables.
