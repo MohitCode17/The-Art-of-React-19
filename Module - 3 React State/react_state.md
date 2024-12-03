@@ -363,3 +363,56 @@ In this code, we are doing the following:
 2. Form submission: The form is submitted using the handleSubmit event handler.
 
 3. Capturing the submitted value: The handleChange function captures the submitted value and stores it in state variables.
+
+**Transition to React 19 from 18 - Form Handling**
+
+```javascript
+// Form submission in React 18
+
+const App = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formEl = e.currentTarget;
+    const formData = new FormData(formEl);
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    console.log(email);
+  };
+
+  return (
+    <section>
+      <h1>Signup form</h1>
+      <form onSubmit={handleSubmit} method="POST">
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="john@doe.com"
+        />
+        <br />
+
+        <label htmlFor="password">Password:</label>
+        <input id="password" type="password" name="password" />
+        <br />
+
+        <button>Submit</button>
+      </form>
+    </section>
+  );
+};
+```
+
+Yes, this is a valid way to handle a form in React. This approach uses the FormData API to gather form data.
+
+But this is an imperative style of handling forms which opposed to declarative nature of coding in react.
+
+But keep in mind that prior to React 19, it actually used to be quite a bit more difficult to gather form information,
+
+or maybe I should qualify that. The traditional way of gathering information from a form, which used something called `controlled` component, which we have seen in first example of code.
+
+was quite a bit more cumbersome that first of all what we doint here, and more importantly what we're about to learn in the next section.
+
+React 19 is introduced must better way to gather form informtion.
