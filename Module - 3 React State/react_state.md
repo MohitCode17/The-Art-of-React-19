@@ -457,3 +457,27 @@ function signUp(formData) {
 * Using conditional rendering, only render the new <section> IF
 * there are ingredients added to the list of ingredients.
 ```
+
+## Chef Claude: conditional rendering challenge 2
+
+```
+* Challenge:
+* Only display the div.get-recipe-container if the ingredients list
+* has more than 3 items in it. (Fewer than that and it might not
+* give great results from the chef 🤖👩‍🍳)
+```
+
+## Chef Claude: Get recipe placeholder challenge
+
+```
+* Challenge:
+* 1. Create a boolean state that, for now, will represent whether
+*    we've gotten a recipe back from the "chef". Default to `false`.
+*    Can call it `recipeShown`.
+* 2. Grab the markup in recipeCode.md and paste it below. This will
+*    be a placeholder for the content that will come back from the
+*    chef once we set up that feature.
+* 3. When the user clicks the "Get a recipe" button, flip the
+*    `recipeShown` state to true.
+* 4. Only display the recipe code content if `recipeShown` is true.
+```
