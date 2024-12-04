@@ -2,20 +2,12 @@ import React from "react";
 import { useState } from "react";
 
 const Main = () => {
-  const [ingredients, setIngredients] = useState([
-    "Chicken",
-    "Oregano",
-    "Tomatoes",
-  ]);
+  const [ingredients, setIngredients] = useState([]);
 
   const ingredientsListItems = ingredients.map((ingredient, index) => (
     <li key={index}>{ingredient}</li>
   ));
 
-  /**
-   * Challenge: use form action instead of onSubmit to
-   * handle the data from the form
-   */
   const addIngredient = (formData) => {
     const newIngredient = formData.get("ingredient");
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
@@ -32,7 +24,21 @@ const Main = () => {
         />
         <button>Add ingredient</button>
       </form>
-      <ul>{ingredientsListItems}</ul>
+      {ingredients.length > 0 && (
+        <section>
+          <h2>Ingredients on hand:</h2>
+          <ul className="ingredients-list" aria-live="polite">
+            {ingredientsListItems}
+          </ul>
+          <div className="get-recipe-container">
+            <div>
+              <h3>Ready for a recipe?</h3>
+              <p>Generate a recipe from your list of ingredients.</p>
+            </div>
+            <button>Get a recipe</button>
+          </div>
+        </section>
+      )}
     </main>
   );
 };

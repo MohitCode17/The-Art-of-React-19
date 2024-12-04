@@ -449,3 +449,11 @@ function signUp(formData) {
 
 <form action={signUp}>...</form>;
 ```
+
+## Chef Claude: conditional rendering challenge 1
+
+```
+* Challenge:
+* Using conditional rendering, only render the new <section> IF
+* there are ingredients added to the list of ingredients.
+```
