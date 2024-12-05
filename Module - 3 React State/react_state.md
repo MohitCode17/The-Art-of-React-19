@@ -549,3 +549,13 @@ I have added some CSS to turns them off by default.
 *
 * Goal: clicking each box should toggle it on and off.
 ```
+
+## Sound pads challenge part 4.2 - shared state
+
+```
+* Challenge: Create a toggle() function in App that logs
+* "clicked!" to the console
+*
+* Pass that function down to each of the Pad components
+* and set it up so when they get clicked, the function runs
+```

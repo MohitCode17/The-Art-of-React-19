@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 
-const Pad = ({ color, on }) => {
+const Pad = ({ color, on, toggle }) => {
   const [isPadOn, setIsPadOn] = useState(on);
-
-  const toggleOnOff = () => {
-    setIsPadOn((prevPadOn) => !prevPadOn);
-  };
 
   return (
     <button
-      onClick={toggleOnOff}
+      onClick={toggle}
       style={{ backgroundColor: color }}
       className={isPadOn ? "on" : undefined}
     ></button>
