@@ -499,3 +499,15 @@ Let's back to Counter App:
 * - After doing this, everything should be working the
 *   same as before.
 ```
+
+## Sound Pads Challenge - Part 1
+
+```
+* Challenge part 1:
+* 1. Initialize state with the default value of the
+*    array pulled in from pads.js
+* 2. Map over that state array and display each one
+*    as a <button> (CSS is already written for you)
+*    (Don't worry about using the "on" or "color"
+*    properties yet)
+```
