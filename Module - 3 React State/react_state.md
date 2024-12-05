@@ -526,3 +526,13 @@ Let's back to Counter App:
 *
 * (We'll deal with the "on" property soon)
 ```
+
+## Sound Pads Challenge - Part 3
+
+```
+* Challenge part 3:
+* Our buttons got turned off by default! Update the code
+* so if the button is "on", it has the className of "on".
+
+I have added some CSS to turns them off by default.
+```

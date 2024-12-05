@@ -6,7 +6,9 @@ import Pad from "./components/Pad";
 const App = () => {
   const [pads, setPads] = useState(padsData);
 
-  const buttonElements = pads.map((pad) => <Pad key={pad.id} color={pad.color} />);
+  const buttonElements = pads.map((pad) => (
+    <Pad key={pad.id} color={pad.color} on={pad.on} />
+  ));
 
   return (
     <main>

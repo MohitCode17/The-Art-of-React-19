@@ -1,7 +1,7 @@
 import React from "react";
 
-const Pad = ({ color }) => {
-  return <button style={{ backgroundColor: color }}></button>;
+const Pad = ({ color, on }) => {
+  return <button style={{ backgroundColor: color }} className={on ? "on" : undefined}></button>;
 };
 
 export default Pad;
