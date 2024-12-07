@@ -594,3 +594,22 @@ I have added some CSS to turns them off by default.
 * done, so there will likely be some extra work to be done
 * beyond what I've listed above.
 ```
+
+## Chef Claude Challenge - Get recipe from the AI 🤖
+
+```
+ * Challenge: Get a recipe from the AI!
+ *
+ * This will be a bit harder of a challenge that will require you
+ * to think critically and synthesize the skills you've been
+ * learning and practicing up to this point.
+ *
+ * Using either the `getRecipeFromMistral` function, make it so that when the user
+ * clicks "Get a recipe", the text response from the AI is displayed
+ * in the <ClaudeRecipe> component.
+ *
+ * For now, just have it render the raw markdown that the AI returns,
+ * don't worry about making it look nice yet. (We're going to use a
+ * package that will render the markdown for us soon.)
+ */
+```

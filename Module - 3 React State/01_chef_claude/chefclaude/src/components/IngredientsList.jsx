@@ -1,6 +1,6 @@
 import React from "react";
 
-const IngredientsList = ({ ingredients, showRecipeHandler }) => {
+const IngredientsList = ({ ingredients, getRecipe }) => {
   const ingredientsListItems = ingredients.map((ingredient, index) => (
     <li key={index}>{ingredient}</li>
   ));
@@ -17,7 +17,7 @@ const IngredientsList = ({ ingredients, showRecipeHandler }) => {
             <h3>Ready for a recipe?</h3>
             <p>Generate a recipe from your list of ingredients.</p>
           </div>
-          <button onClick={showRecipeHandler}>Get a recipe</button>
+          <button onClick={getRecipe}>Get a recipe</button>
         </div>
       )}
     </section>
