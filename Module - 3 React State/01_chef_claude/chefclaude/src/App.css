@@ -121,6 +121,7 @@ ul.ingredients-list > li {
 .suggested-receipe-section h2 {
   margin-bottom: 10px;
 }
+
 .suggested-recipe-container {
   color: #475467;
   line-height: 28px;
@@ -128,7 +129,11 @@ ul.ingredients-list > li {
   font-weight: 400;
 }
 
-.suggested-recipe-container > h3 {
+.suggested-recipe-container p {
+  margin: 15px 0;
+}
+
+.suggested-recipe-container h3 {
   margin: 15px 0;
 }
 

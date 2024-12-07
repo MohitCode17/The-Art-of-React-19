@@ -5,12 +5,7 @@ import IngredientsList from "./IngredientsList";
 import { getRecipeFromMistral } from "../ai";
 
 const Main = () => {
-  const [ingredients, setIngredients] = useState([
-    "all the spices",
-    "potato",
-    "onion",
-    "pasta",
-  ]);
+  const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState("");
 
   const addIngredient = (formData) => {

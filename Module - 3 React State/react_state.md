@@ -613,3 +613,14 @@ I have added some CSS to turns them off by default.
  * package that will render the markdown for us soon.)
  */
 ```
+
+## Chef Chaude Challenge - Format recipe response
+
+```
+ * Challenge: See if you can figure out how to use the
+ * react-markdown package to render `props.recipe` as React
+ * elements rather than the plain markdown text.
+ *
+ * Use the link in the slide to navigate directly to the
+ * package's instructions on how to use it.
+```
