@@ -1,29 +1,45 @@
 import React, { useState } from "react";
 
 const Main = () => {
-  /**
-   * Challenge: move the hardcoded meme info into React
-   * state. Use an object with `topText`, `bottomText`,
-   * and `image` properties, and set the initial values to
-   * the ones hardcoded below.c
-   */
   const [meme, setMeme] = useState({
     topText: "One does not simply",
     bottomText: "Walk into Mordo",
     image: "http://i.imgflip.com/1bij.jpg",
   });
 
+  // Handle Input Change
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: value,
+    }));
+  };
+
   return (
     <main>
       <div className="form">
         <label>
           Top Text
-          <input type="text" placeholder="One does not simply" name="topText" />
+          <input
+            type="text"
+            placeholder="One does not simply"
+            name="topText"
+            onChange={handleChange}
+            value={meme.topText}
+          />
         </label>
 
         <label>
           Bottom Text
-          <input type="text" placeholder="Walk into Mordor" name="bottomText" />
+          <input
+            type="text"
+            placeholder="Walk into Mordor"
+            name="bottomText"
+            onChange={handleChange}
+            value={meme.bottomText}
+          />
         </label>
         <button>Get a new meme image 🖼</button>
       </div>
