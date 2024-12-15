@@ -1,6 +1,6 @@
 import React from "react";
 
-const IngredientsList = ({ ingredients, getRecipe }) => {
+const IngredientsList = ({ ingredients, getRecipe, ref, loading }) => {
   const ingredientsListItems = ingredients.map((ingredient, index) => (
     <li key={index}>{ingredient}</li>
   ));
@@ -13,11 +13,13 @@ const IngredientsList = ({ ingredients, getRecipe }) => {
       </ul>
       {ingredients.length > 3 && (
         <div className="get-recipe-container">
-          <div>
+          <div ref={ref}>
             <h3>Ready for a recipe?</h3>
             <p>Generate a recipe from your list of ingredients.</p>
           </div>
-          <button onClick={getRecipe}>Get a recipe</button>
+          <button onClick={getRecipe}>
+            {loading ? "Getting..." : "Get a recipe"}
+          </button>
         </div>
       )}
     </section>
