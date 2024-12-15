@@ -83,3 +83,83 @@ export default function App() {
   );
 }
 ```
+
+## cleanup function in useEffect
+
+A cleanup function inside a useEffect hook in React is used to clean up resources or side effects that were created by the effect. It helps prevent memory leaks and ensures that the component behaves correctly when it unmounts or re-renders.
+
+**Why use a cleanup function?**
+
+1. Avoid Memory Leaks:
+   If an effect sets up resources (e.g., timers, event listeners, or subscriptions), those resources might remain active even after the component is unmounted or updated. The cleanup function ensures these resources are properly disposed of.
+
+2. Handle Component Re-Renders:
+   If a component re-renders, the previous effect might still be active. The cleanup function ensures that any leftover side effects from the previous render are cleaned up before the next effect runs.
+
+3. Unsubscribe from Listeners or Services:
+   It ensures that external listeners, such as those on window, document, or third-party services, are removed when no longer needed.
+
+4. Good Practice for Predictable Behavior:
+   Proper cleanup ensures the application behaves predictably, especially when the component is dynamically added/removed from the DOM.
+
+**How the cleanup function works**
+
+The cleanup function is defined as a return value inside the useEffect callback. React calls this function before the component unmounts or before running the effect again if the dependencies change.
+
+```javascript
+useEffect(() => {
+  // Setup logic (e.g., event listeners, timers, subscriptions)
+  const intervalId = setInterval(() => {
+    console.log("Running effect");
+  }, 1000);
+
+  // Cleanup logic
+  return () => {
+    clearInterval(intervalId); // Clear the interval
+    console.log("Cleanup function called");
+  };
+}, []); // Dependency array
+```
+
+**Common Use Cases for Cleaup**
+
+1. Clearing Timers or Intervals:
+
+   ```javascript
+   useEffect(() => {
+     const timer = setTimeout(() => {
+       console.log("Timeout executed");
+     }, 5000);
+
+     return () => clearTimeout(timer); // Clear timeout
+   }, []);
+   ```
+
+2. Removing Event Listeners:
+
+   ```javascript
+   useEffect(() => {
+     const handleResize = () => console.log(window.innerWidth);
+     window.addEventListener("resize", handleResize);
+
+     return () => window.removeEventListener("resize", handleResize); // Remove event listener
+   }, []);
+   ```
+
+3. Cancelling Network Requests:
+
+   ```javascript
+   useEffect(() => {
+     const controller = new AbortController();
+     fetch("/api/data", { signal: controller.signal })
+       .then((response) => response.json())
+       .then((data) => console.log(data))
+       .catch((err) => {
+         if (err.name === "AbortError") {
+           console.log("Request cancelled");
+         }
+       });
+
+     return () => controller.abort(); // Cancel the request on cleanup
+   }, []);
+   ```
